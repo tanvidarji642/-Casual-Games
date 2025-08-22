@@ -23,4 +23,4 @@ A collection of fun "casual games" built with HTML, CSS, and JavaScript. Play on
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/multi-game-hub.git
+git clone https://github.com/tanvidarji642/-Casual-Games.git

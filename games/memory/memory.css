@@ -1,0 +1,123 @@
+/* Body & page style */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #1e1e2f; /* Dark background */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ff5722; /* Bright game title */
+    text-shadow: 1px 1px 5px #000;
+}
+
+/* Memory board */
+#memoryBoard {
+    display: grid;
+    grid-template-columns: repeat(4, 90px); /* 4x4 board */
+    grid-gap: 15px;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+/* Memory cards */
+.memoryCard {
+    width: 90px;
+    height: 90px;
+    background: #2a2a3d;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
+/* Hover effect */
+.memoryCard:hover {
+    background: #555;
+    transform: scale(1.05) rotateY(10deg);
+    box-shadow: 0 0 15px #ff5722;
+}
+
+/* Matched cards */
+.memoryCard.matched {
+    background: #4caf50;
+    color: #fff;
+    box-shadow: 0 0 20px #4caf50 inset;
+    transform: scale(1.1) rotateY(0deg);
+}
+
+/* Game Over overlay */
+#game-container {
+    position: relative;
+    width: 390px;
+    height: 390px;
+    z-index: 0;
+}
+
+#gameOverScreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    display: none; /* hidden initially */
+    transition: opacity 0.3s ease;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#gameOverScreen h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ff4444;
+    text-shadow: 1px 1px 5px #000;
+}
+
+#gameOverScreen button {
+    margin: 10px;
+    padding: 10px 25px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#gameOverScreen button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(90deg, #feb47b, #ff7e5f);
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 500px) {
+    #memoryBoard {
+        grid-template-columns: repeat(4, 60px);
+        grid-gap: 10px;
+    }
+    .memoryCard {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8em;
+    }
+}
